@@ -1,0 +1,87 @@
+
+body {
+  font-family: sans-serif;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+h1 {
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+#tombola {
+  width: 320px;
+  height: 320px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.gif-fondo {
+  mask-image: radial-gradient(circle at center, black 98%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 98%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+}
+.bola {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+#bola-seleccionada.grande {
+  top: 130px;
+  left: 130px;
+  animation: pop 1s ease;
+}
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.6); }
+  100% { transform: scale(1); }
+}
+#sortear {
+  background-color: #00cc66;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#bolas-sorteadas {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  max-width: 320px;
+  margin: 20px auto 0 auto;
+}
+#bolas-sorteadas .bola {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  position: static;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+.bola.aparece {
+  animation: bounceIn 0.5s ease;
+}
